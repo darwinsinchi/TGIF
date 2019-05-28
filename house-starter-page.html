@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/project2.css" />
+  </head>
+
+  <body>
+    <div id="overlay">
+      <div class="spinner"></div>
+    </div>
+    <div id="vue-app" class="container">
+      <div class="page-header">
+        <div class="row">
+          <div class="col-md-6">
+            <img src="pictures/tgiflogo.jpg" />
+            <a href="home-starter-page.html"><h1>TGIF</h1></a>
+          </div>
+          <div class="col-md-6">
+            <a href="mailto:info@tgif.net"><h5>info@tgif.net</h5></a>
+          </div>
+        </div>
+      </div>
+
+      <nav class="navbar navbar-expand navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="home-starter-page.html">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Congress 113
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="senate-starter-page100.html"
+                  >Senate</a
+                >
+                <a class="dropdown-item" href="house-starter-page.html"
+                  >House</a
+                >
+              </div>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Attendance
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="senate_attendance2.html"
+                  >Senate</a
+                >
+                <a class="dropdown-item" href="house_attendance2.html">House</a>
+              </div>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Loyalty
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="senate_loyalty2.html">Senate</a>
+                <a class="dropdown-item" href="house_loyalty2.html">House</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <!--Table container-->
+      <div>
+        <h2>Congressmen</h2>
+        <p>
+          The major power of the House is to pass federal legislation that
+          affects the entire country, although its bills must also be passed by
+          the Senate and further agreed to by the U.S. President before becoming
+          law (unless both the House and Senate re-pass the legislation with a
+          two-thirds majority in each chamber). The House has some exclusive
+          powers: the power to initiate revenue bills, to impeach officials
+          (impeached officials are subsequently tried in the Senate), and to
+          elect the U.S. President in case there is no majority in the Electoral
+          College.
+        </p>
+        <p>
+          Each U.S. state is represented in the House in proportion to its
+          population as measured in the census, but every state is entitled to
+          at least one representative.
+        </p>
+        <div class="filterByState">
+          <p>Filter By State</p>
+          <select v-model="states">
+            <option>ALL </option>
+            <option v-for="state in uniqueStates">{{ state }}</option>
+          </select>
+        </div>
+        <div class="checkbox">
+          <form>
+            <fieldset>
+              <p>Filter by Party</p>
+              <div id="checkboxes">
+                <label>Republican</label>
+                <input type="checkbox" value="R" v-model="parties" />
+                <label>Democrat</label>
+                <input type="checkbox" value="D" v-model="parties" />
+                <label>Independent</label>
+                <input type="checkbox" value="I" v-model="parties" />
+              </div>
+            </fieldset>
+          </form>
+          <p></p>
+        </div>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Party</th>
+              <th>State</th>
+              <th>Years in Office</th>
+              <th>% Votes w/ Party</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="senateMember in filteredMembers">
+              <td>
+                <a v-bind:href="senateMember.url">
+                  {{ senateMember.last_name }} {{ senateMember.first_name }}
+                  {{ senateMember.middle_name }}</a
+                >
+              </td>
+              <td>{{ senateMember.party }}</td>
+              <td>{{ senateMember.state }}</td>
+              <td>{{ senateMember.seniority }}</td>
+              <td>{{ senateMember.votes_with_party_pct }} %</td>
+            </tr>
+          </tbody>
+        </table>
+        <div v-if="filteredMembers.length==0" class="center">
+          <h5>No Members</h5>
+        </div>
+        <div class="footer">
+          <p>2019 TGIF | All Rigths Reserved</p>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script
+          src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+          crossorigin="anonymous"
+        ></script>
+        <script
+          src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+          crossorigin="anonymous"
+        ></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+          integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+          crossorigin="anonymous"
+        ></script>
+        <script
+          src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+          integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+          crossorigin="anonymous"
+        ></script>
+        <script src="./JS/pro-congress-113-house.js"></script>
+        <script
+          src="./JS/senate -checkbox100.js"
+          type="text/javascript"
+        ></script>
+      </div>
+    </div>
+  </body>
+</html>

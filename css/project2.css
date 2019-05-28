@@ -1,0 +1,106 @@
+.col-md-6 img {
+  width: 100px;
+  height: 60px;
+  float: left;
+}
+
+.picture img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.tableheader {
+  font-size: 100px;
+}
+
+.col-md-6 h1 {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.page-header {
+  margin-bottom: 10px;
+}
+.checkbox {
+  margin-top: 20px;
+}
+.col-md-6 h5 {
+  float: right;
+  position: relative;
+  top: 16px;
+  color: darkred;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.spinner {
+  width: 80px;
+  height: 80px;
+
+  border: 2px solid #f3f3f3;
+  border-top: 3px solid #f25a41;
+  border-radius: 100%;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#overlay {
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+[aria-expanded="false"] > .expanded,
+[aria-expanded="true"] > .collapsed {
+  display: none;
+}
+
+/* BELLOW JUST STYLING */
+.container {
+  margin-top: 0px;
+  padding-top: 0px;
+  padding-bottom: 30px;
+  background-color: #efefef;
+  border-radius: 25px;
+}
+
+.footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: black;
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+#btn.collapsed:before {
+  content: "Read More";
+}
+
+#btn:before {
+  content: "Read Less";
+}
+.row {
+  margin-top: 20px;
+}

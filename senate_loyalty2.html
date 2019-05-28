@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+       
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="./css/project2.css">
+    </head>
+    
+    <body>
+        <div id="overlay">
+        <div class="spinner"></div>
+        </div>
+        <div class="container">
+            <div class="page-header">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="pictures/tgiflogo.jpg">
+                     <a href="home-starter-page.html"><h1>TGIF</h1></a>
+                </div>
+              <div class="col-md-6">
+                     <a href="mailto:info@tgif.net"><h5>info@tgif.net</h5></a>
+                </div>
+                </div>
+                </div>
+            
+           <nav class="navbar navbar-expand navbar-light bg-light">              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" href="home-starter-page.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Congress 113
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="senate-starter-page100.html">Senate</a>
+                        <a class="dropdown-item" href="house-starter-page.html">House</a>
+                      </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Attendance
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <a class="dropdown-item" href="senate_attendance2.html">Senate</a>
+                              <a class="dropdown-item" href="house_attendance2.html">House</a>
+                            </div>
+                          </li>
+                    
+                    <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Loyalty
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                  <a class="dropdown-item" href="senate_loyalty2.html">Senate</a>
+                                  <a class="dropdown-item" href="house_loyalty2.html">House</a>
+                                </div>
+                              </li>
+
+                  </ul>
+                </div>
+              </nav>
+        <!--Table container-->
+        <div>
+            <div class="row">
+                    <div class="col-md-5">
+            <h2>Party Loyalty</h2>
+            <p>Those who consider themselves to be strong partisans, strong Democrats and strong Republicans respectively, tend to be the most faithful in voting for their party's nominee for office and legislation that backs their party's agenda.</p>
+            </div>
+                    <div class="col-md-7">
+            <h2>Senate at a glance</h2>
+            <table class="table table-striped">
+                    <tbody ></tbody>
+                <thead>
+                    <tr>
+                        <th>Party</th>
+                        <th>Number of Reps</th>
+                        <th>% Voted with Prty</th>
+                    </tr>
+                    <tbody id="tbody-senate-loyalty"></tbody>
+                </thead>
+            </table>
+            </div>
+            </div>
+            <div class="row">
+                    <div class="col-md-6">
+            <h2>Least Loyal (Bottom 10% Attendance)</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Number of Votes</th>
+                        <th>% Party Votes</th>
+                    </tr>
+                    <tbody id="tbody-senate-loyalty3"></tbody>
+                </thead>
+                <tbody>
+                    </tr>
+                </tbody> 
+            </table>
+            </div>   
+                    <div class="col-md-6">
+            <h2>Most Loyal (Top 10% Attendance)</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Number of Votes</th>
+                        <th>% Party Votes</th>
+                    </tr>
+                    <tbody id="tbody-senate-loyalty2"></tbody>
+                </thead>
+                
+            </table>
+            </div>
+            <div class="footer">
+                <p>2019 TGIF | All Rigths Reserved</p>
+              </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>   
+        <script src="./JS/pro-congress-113-senate.js"></script>
+        <script src="./JS/senate_loyalty2.js" type="text/javascript"></script>  
+ </div>
+</body>
+</html>
